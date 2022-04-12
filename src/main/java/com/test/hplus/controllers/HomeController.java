@@ -1,7 +1,13 @@
 package com.test.hplus.controllers;
 
+import com.test.hplus.beans.Login;
+import com.test.hplus.beans.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -9,6 +15,39 @@ public class HomeController {
     public String goHome(){
         System.out.println("In home controller");
 
-        return "index";
+        return "index"; //index view
     }
+
+    @GetMapping("/goToSearch")
+    public String gotToSearch(){
+        System.out.println("going to search");
+        return "search";  // it's the search view
+    }
+
+    @GetMapping("/goToLogin")
+    public String gotToLogin(){
+        System.out.println("going to login page");
+        return "login";  // it's the search view
+    }
+
+    @GetMapping("/goToRegistration")
+    public String goToRegistration(){
+        System.out.println("going to register page");
+        return "register";  // it's the search view
+    }
+//    @ModelAttribute("newuser")
+//    public User getDefaultUser(){
+//        return new User();
+//    }
+//
+//    @ModelAttribute("genderItems")
+//    public List<String> getGenderItems(){
+//        return Arrays.asList( new String[]{"Male", "Female", "Other"});
+//    }
+//
+//    @ModelAttribute("login")
+//    public Login getDefaultLogin(){
+//        return new Login();
+//    }
+
 }
